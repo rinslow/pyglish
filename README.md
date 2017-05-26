@@ -13,16 +13,22 @@ def primes():
     x = 1
     while True:
         was_divided = False
-        x+= 1
+        x += 1
         for y in xrange(2, x):
             if x % y == 0:
-                was divided = True
+                was_divided = True
         
         if not was_divided:
             yield x
 ```
 
 # This is how we do it 
+```python
+def primes():
+    for every prime x:
+        yield x
+```
+And if you call this cheating...
 ```python
 def primes():
     yield every natural x if there is no y from 2 to x where x is divided by y
