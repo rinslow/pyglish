@@ -6,15 +6,6 @@ ASSERT_THAT_IS = "assert that (.+) is (.+)"
 ASSERT_THAT_RAISES = "assert that (.+) raises (.+)"
 ASSERT_RAISES = "assert raises (.+):"
 
-# Comparisons
-ASSERT_THAT_EQUAL_TO = "assert that (.+) is equal to (.+)"
-ASSERT_THAT_NOT_EQUAL_TO = "assert that (.+) is not equal to (.+)"
-ASSERT_THAT_GREATER_THAN = "assert that (.+) is greater than (.+)"
-ASSERT_THAT_GREATER_EQUALS = "assert that (.+) is greater than or equal to (.+)"
-ASSERT_THAT_LESS_THAN = "assert that (.+) is less than (.+)"
-ASSERT_THAT_LESS_EQUALS = "assert that (.+) is less than or equal to (.+)"
-ASSERT_THAT_BETWEEN = "assert that (.+) is between (.+) and (.+)"
-
 # Lists
 ASSERT_THAT_IN = "assert that (.+) is in (.+)"
 ASSERT_THAT_CONTAINS = "assert that (.+) contains (.+)"
@@ -31,35 +22,6 @@ def unittests(code):
     Returns:
         str. python code.
     """
-    # COMPARISONS
-    code = re.sub(ASSERT_THAT_EQUAL_TO,
-                  r"self.assertEqual(\1, \2)",
-                  code)
-
-    code = re.sub(ASSERT_THAT_NOT_EQUAL_TO,
-                  r"self.assertNotEqual(\1, \2)",
-                  code)
-
-    code = re.sub(ASSERT_THAT_GREATER_EQUALS,
-                  r"self.assertGreaterEqual(\1, \2)",
-                  code)
-
-    code = re.sub(ASSERT_THAT_GREATER_THAN,
-                  r"self.assertGreater(\1, \2)",
-                  code)
-
-    code = re.sub(ASSERT_THAT_LESS_EQUALS,
-                  r"self.assertLessEqual(\1, \2)",
-                  code)
-
-    code = re.sub(ASSERT_THAT_LESS_THAN,
-                  r"self.assertLess(\1, \2)",
-                  code)
-
-    code = re.sub(ASSERT_THAT_BETWEEN,
-                  r"self.assertTrue(\2 <= \1 <= \3)",
-                  code)
-
     # LISTS
     code = re.sub(ASSERT_THAT_CONTAINS_IN_ORDER,
                   r"self.assertTrue(any(\1[i:i+len(\2)]==\2 "
