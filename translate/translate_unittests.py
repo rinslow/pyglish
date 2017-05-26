@@ -2,13 +2,10 @@ import re
 
 # Asserts
 ASSERT_THAT_STAR = "assert that (.+)"
-ASSERT_THAT_IS = "assert that (.+) is (.+)"
 ASSERT_THAT_RAISES = "assert that (.+) raises (.+)"
 ASSERT_RAISES = "assert raises (.+):"
 
 # Lists
-ASSERT_THAT_IN = "assert that (.+) is in (.+)"
-ASSERT_THAT_CONTAINS = "assert that (.+) contains (.+)"
 ASSERT_THAT_IS_ITERABLE = "assert that (.+) is iterable"
 ASSERT_THAT_CONTAINS_IN_ORDER = "assert that (.+) contains (.+) in order"
 
@@ -28,14 +25,6 @@ def unittests(code):
                   r"for i in xrange(len(\1)-len(\2)+1)))",
                   code)
 
-    code = re.sub(ASSERT_THAT_CONTAINS,
-                  r"self.assertIn(\2, \1)",
-                  code)
-
-    code = re.sub(ASSERT_THAT_IN,
-                  r"self.assertIn(\1, \2)",
-                  code)
-
     code = re.sub(ASSERT_THAT_IS_ITERABLE,
                   r"import collections; self.assertTrue(isinstance(\1, "
                   r"collections.Iterable))",
@@ -47,10 +36,6 @@ def unittests(code):
 
     code = re.sub(ASSERT_RAISES,
                   r"with self.assertRaises(\1):",
-                  code)
-
-    code = re.sub(ASSERT_THAT_IS,
-                  r"self.assertIs(\1, \2)",
                   code)
 
     code = re.sub(ASSERT_THAT_STAR, r"self.assertTrue(\1)", code)

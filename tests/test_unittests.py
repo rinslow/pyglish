@@ -54,24 +54,6 @@ class UnittestCase(TestCase):
         actual = ut(comparisons(code))
         self.assertEquals(expected, actual)
 
-    def test_assertIs(self):
-        code = "assert that x is y"
-        expected = "self.assertIs(x, y)"
-        actual = ut(code)
-        self.assertEquals(expected, actual)
-
-    def test_assertIn(self):
-        code = "assert that x is in y"
-        expected = "self.assertIn(x, y)"
-        actual = ut(code)
-        self.assertEquals(expected, actual)
-
-    def test_assertContains(self):
-        code = "assert that x contains y"
-        expected = "self.assertIn(y, x)"
-        actual = ut(code)
-        self.assertEquals(expected, actual)
-
     def test_assertIsIterable(self):
         code = "assert that x is iterable"
         expected = "import collections; " \
@@ -97,3 +79,9 @@ class UnittestCase(TestCase):
         expected = "self.assertRaises(foo, MeowException)"
         actual = ut(code)
         self.assertEquals(expected, actual)
+
+    def test_assert_is_not(self):
+        code = "assert that x is not 4"
+        expected = "self.assertTrue(x is not 4)"
+        actual = ut(code)
+        self.assertEqual(expected, actual)
