@@ -85,3 +85,51 @@ class UnittestCase(TestCase):
         expected = "self.assertTrue(x is not 4)"
         actual = ut(code)
         self.assertEqual(expected, actual)
+
+    def test_should_be(self):
+        code = "x should be 3"
+        expected = "assert (x is 3)"
+        actual = ut(code)
+        self.assertEqual(expected, actual)
+
+    def test_should_eq(self):
+        code = "x should be equal to 3"
+        expected = "assert (x == 3)"
+        actual = ut(code)
+        self.assertEqual(expected, actual)
+
+    def test_should_ne(self):
+        code = "x should not be equal to 3"
+        expected = "assert (x != 3)"
+        actual = ut(code)
+        self.assertEqual(expected, actual)
+
+    def test_should_lte(self):
+        code = "x should be less than or equal to 3"
+        expected = "assert (x <= 3)"
+        actual = ut(code)
+        self.assertEqual(expected, actual)
+
+    def test_should_lt(self):
+        code = "x should be less than 3"
+        expected = "assert (x < 3)"
+        actual = ut(code)
+        self.assertEqual(expected, actual)
+
+    def test_should_gte(self):
+        code = "x should be greater than or equal to 3"
+        expected = "assert (x >= 3)"
+        actual = ut(code)
+        self.assertEqual(expected, actual)
+
+    def test_should_gt(self):
+        code = "x should be greater than 3"
+        expected = "assert (x > 3)"
+        actual = ut(code)
+        self.assertEqual(expected, actual)
+
+    def test_should_between(self):
+        code = "x should be between 0 and 9"
+        expected = "assert (0 <= x <= 9)"
+        actual = ut(code)
+        self.assertEqual(expected, actual)

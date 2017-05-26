@@ -5,9 +5,11 @@ import sys
 from errors import FileDoesNotEndWithPYG
 
 from translate.translate_unittests import unittests
+from translate.translate_loops import loops
+from translate.translate_comparisons import comparisons
 
 
-TRANSLATORS = [unittests]
+TRANSLATORS = [unittests, loops, comparisons]
 
 
 def translate(code):

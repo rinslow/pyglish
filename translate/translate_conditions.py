@@ -1,3 +1,10 @@
 IS_IN = "(.+) is in (.+)"
 IS_NOT_IN = "(.+) is not in (.+)"
 ASSERT_THAT_CONTAINS = "(.+) contains (.+)"
+ENDS_WITH = "(.+) ends with (.+)"  # TODO: Array support?
+STARTS_WITH = "(.+) starts with"  # TODO: Array support?
+IS_CAPITALIZED = "(.+) is capitalized"
+IS_EMPTY = "(.+) is empty"
+IS_PRIME = "(.+) is prime"
+IS_NATURAL = "(.+) is natural"
+OTHERWISE = "otherwise:"

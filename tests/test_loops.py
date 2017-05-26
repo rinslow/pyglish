@@ -47,4 +47,3 @@ class LoopsTest(TestCase):
         expected = "for x in y: print x"
         actual = loops(code)
         self.assertEqual(expected, actual)
-
