@@ -73,8 +73,8 @@ Some of Pyglish's important features as we keep in mind are
  * Event-based programming
  * [Monoikers](http://www.yegor256.com/2017/05/16/monikers.html)
  * Then-Success-Failure angular-like promise
- * pyglish ignore.
-
+ * Pyglish ignore
+ * Recursive walking through directories
 
 
 # Usage
