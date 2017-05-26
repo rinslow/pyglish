@@ -1,7 +1,8 @@
 # Pyglish 
 
 
-[![codebeat badge](https://codebeat.co/badges/e86a8bfe-3ad9-4d4e-98b6-b5a4e46852f1)](https://codebeat.co/projects/github-com-d-kiss-pyglish-master)
+[![codebeat badge](https://codebeat.co/badges/e86a8bfe-3ad9-4d4e-98b6-b5a4e46852f1)](https://codebeat.co/projects/github-com-d-kiss-pyglish-master) [![Build status](https://ci.appveyor.com/api/projects/status/lp9pilvqln7vwkmu/branch/master?svg=true)](https://ci.appveyor.com/project/d-kiss/pyglish/branch/master)
+
 
 Pyglish is a free and open-source programming language developed and maintained by d-kiss. It is a verbose syntactical superset of Python, and adds english-like syntax to the language. 
 
