@@ -107,4 +107,8 @@ Some of Pyglish's important features as we keep in mind are
 | ```user.name should not be "Daniel"```|```assert user.name != "Daniel"```|
 | ```assert that sock.connect raises socket.error```|```self.assertRaises(sock.connect, socket.error)```|
 | ```assert raises NotImplementedError: a = AbstractClass()```|```with self.assertRaises(NotImplementedError): a = AbstractClass()```|
+|```name should be equal to get_admin_name()```| ```assert name == get_admin_name()```|
+|```connection should be CLOSED```|```assert connection is CLOSED```|
+|```file_content should not be equal to "Pyglish v1.2"```|```assert file_content != "Pyglish v1.2"```|
+|```user_number should be greater than or equal to 6```|```assert user_number >= 6```|
 
