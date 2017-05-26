@@ -1,4 +1,6 @@
 from unittest import TestCase
+
+from translate.translate_comparisons import comparisons
 from translate.translate_unittests import unittests as ut
 
 
@@ -6,49 +8,50 @@ class UnittestCase(TestCase):
     def test_assertThat(self):
         code = "assert that x == y"
         expected = "self.assertTrue(x == y)"
-        actual = ut(code)
-        self.assertEquals(expected, actual)
+        actual = ut(comparisons(code))
+        self.assertEquals(expected,
+                          actual)
 
     def test_assertThatIsEqualTo(self):
         code = "assert that x is equal to y"
-        expected = "self.assertEqual(x, y)"
-        actual = ut(code)
+        expected = "self.assertTrue(x == y)"
+        actual = ut(comparisons(code))
         self.assertEquals(expected, actual)
 
     def test_assertThatIsNotEqualTo(self):
         code = "assert that x is not equal to y"
-        expected = "self.assertNotEqual(x, y)"
-        actual = ut(code)
+        expected = "self.assertTrue(x != y)"
+        actual = ut(comparisons(code))
         self.assertEquals(expected, actual)
 
     def test_assertThatIsGreaterThan(self):
         code = "assert that x is greater than y"
-        expected = "self.assertGreater(x, y)"
-        actual = ut(code)
+        expected = "self.assertTrue(x > y)"
+        actual = ut(comparisons(code))
         self.assertEquals(expected, actual)
 
     def test_assertThatIsGreaterThanOrEqualTo(self):
         code = "assert that x is greater than or equal to y"
-        expected = "self.assertGreaterEqual(x, y)"
-        actual = ut(code)
+        expected = "self.assertTrue(x >= y)"
+        actual = ut(comparisons(code))
         self.assertEquals(expected, actual)
 
     def test_assertThatIsLessThan(self):
         code = "assert that x is less than y"
-        expected = "self.assertLess(x, y)"
-        actual = ut(code)
+        expected = "self.assertTrue(x < y)"
+        actual = ut(comparisons(code))
         self.assertEquals(expected, actual)
 
     def test_assertThatIsLessThanOrEqualTo(self):
         code = "assert that x is less than or equal to y"
-        expected = "self.assertLessEqual(x, y)"
-        actual = ut(code)
+        expected = "self.assertTrue(x <= y)"
+        actual = ut(comparisons(code))
         self.assertEquals(expected, actual)
 
     def test_assertThatIsBetween(self):
         code = "assert that x is between 0 and 9"
         expected = "self.assertTrue(0 <= x <= 9)"
-        actual = ut(code)
+        actual = ut(comparisons(code))
         self.assertEquals(expected, actual)
 
     def test_assertIs(self):
