@@ -5,6 +5,33 @@
 
 Pyglish is a free and open-source programming language developed and maintained by d-kiss. It is a verbose syntactical superset of Python, and adds english-like syntax to the language. 
 
+# Have a look at this python code:
+This code snippet is a generator for prime numbers
+```python
+def primes():
+    x = 1
+    while True:
+        was_divided = False
+        x+= 1
+        for y in xrange(2, x):
+            if x % y == 0:
+                was divided = True
+        
+        if not was_divided:
+            yield x
+```
+
+# This is how we do it 
+```python
+def primes():
+    yield every natural x if there is no y from 2 to x where x is divided by y
+```
+or, if you prefer:
+```python
+def primes():
+    yield x for every number x from 1 to inifinity if there is no number y from 2 to x  where x divides y
+```
+
 Some of Pyglish's important features as we keep in mind are
   - 100% full backwards compatability with python.
   - Easy to use and intuitive.
